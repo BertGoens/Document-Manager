@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BE63DEC-1F7F-41F7-A443-E5FAB2AD4283}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>Ag.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Document Manager</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>DM</RootNamespace>
+    <StartupObject>DM.Main</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsForms</MyType>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>965B153E018D8F71785156925F08DDE3D7A46DA6</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Test Word_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <PublishUrl>Z:\Bert\Stage Tickets\Docman\Docman Setup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>Document Manager</ProductName>
+    <PublisherName>AZSAV</PublisherName>
+    <SuiteName>docman</SuiteName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <DisallowUrlActivation>true</DisallowUrlActivation>
+    <ApplicationRevision>32</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Document Manager.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\Nieuwe map\</OutputPath>
+    <DocumentationFile>Document Manager.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>Off</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MTGCCombobox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Flat-MultiCombobox\MTGCCombobox\bin\MTGCCombobox.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\WordDocumentUtil.vb" />
+    <Compile Include="Views\Auteurs.Designer.vb">
+      <DependentUpon>Auteurs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Auteurs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AuteurSjabloon.Designer.vb">
+      <DependentUpon>AuteurSjabloon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AuteurSjabloon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Bestemmeling.Designer.vb">
+      <DependentUpon>Bestemmeling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bestemmeling.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Bestemmeling_wijzig.Designer.vb">
+      <DependentUpon>Bestemmeling_wijzig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bestemmeling_wijzig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Codes.Designer.vb">
+      <DependentUpon>Codes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Codes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSources\dtsDocumenten.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsDocumenten.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsDocumenten.vb">
+      <DependentUpon>dtsDocumenten.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DBLijst.Designer.vb">
+      <DependentUpon>DBLijst.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DBLijst.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Diensten.Designer.vb">
+      <DependentUpon>Diensten.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Diensten.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSources\dtsVolgnr.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsVolgnr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsVolgnr.vb">
+      <DependentUpon>dtsVolgnr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsAuteur.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsAuteur.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsBestemmeling.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsBestemmeling.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsComboSjabloon.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsComboSjabloon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsComboSjabloon.vb">
+      <DependentUpon>dtsComboSjabloon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsDocs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsDocs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsDocs.vb">
+      <DependentUpon>dtsDocs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsSjabloon.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsSjabloon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsSjabloon.vb">
+      <DependentUpon>dtsSjabloon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsSjabloonNew.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsSjabloonNew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsSjabloonNew.vb">
+      <DependentUpon>dtsSjabloonNew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsZoeken.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsZoeken.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsZoeken.vb">
+      <DependentUpon>dtsZoeken.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\dtsDiensten.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsDiensten.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\Auteur.vb" />
+    <Compile Include="Model\PathUtil.vb" />
+    <Compile Include="Model\Singleton.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PasswordBox.Designer.vb">
+      <DependentUpon>PasswordBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PasswordBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="Views\Zoeken.Designer.vb">
+      <DependentUpon>Zoeken.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Zoeken.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Views\Auteurs.resx">
+      <DependentUpon>Auteurs.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AuteurSjabloon.resx">
+      <DependentUpon>AuteurSjabloon.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Bestemmeling.resx">
+      <DependentUpon>Bestemmeling.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Bestemmeling_wijzig.resx">
+      <DependentUpon>Bestemmeling_wijzig.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Codes.resx">
+      <DependentUpon>Codes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DBLijst.resx">
+      <DependentUpon>DBLijst.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Diensten.resx">
+      <DependentUpon>Diensten.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PasswordBox.resx">
+      <DependentUpon>PasswordBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Zoeken.resx">
+      <DependentUpon>Zoeken.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSources\dtsVolgnr.xsc">
+      <DependentUpon>dtsVolgnr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsVolgnr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsVolgnr.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources\dtsVolgnr.xss">
+      <DependentUpon>dtsVolgnr.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Test Word_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ag.ico" />
+    <None Include="Readme.md" />
+    <None Include="DataSources\dtsAuteur.xsc">
+      <DependentUpon>dtsAuteur.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsAuteur.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsAuteur.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSources\dtsAuteur.xss">
+      <DependentUpon>dtsAuteur.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsBestemmeling.xsc">
+      <DependentUpon>dtsBestemmeling.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsBestemmeling.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsBestemmeling.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources\dtsBestemmeling.xss">
+      <DependentUpon>dtsBestemmeling.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsComboSjabloon.xsc">
+      <DependentUpon>dtsComboSjabloon.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsComboSjabloon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsComboSjabloon.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources\dtsComboSjabloon.xss">
+      <DependentUpon>dtsComboSjabloon.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsSjabloonNew.xsc">
+      <DependentUpon>dtsSjabloonNew.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsSjabloonNew.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsSjabloonNew.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources\dtsSjabloonNew.xss">
+      <DependentUpon>dtsSjabloonNew.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsZoeken.xsc">
+      <DependentUpon>dtsZoeken.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsZoeken.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsZoeken.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources\dtsZoeken.xss">
+      <DependentUpon>dtsZoeken.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsDiensten.xsc">
+      <DependentUpon>dtsDiensten.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsDiensten.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsDiensten.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources\dtsDiensten.xss">
+      <DependentUpon>dtsDiensten.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\logo.png" />
+    <None Include="DataSources\dtsDocumenten.xsc">
+      <DependentUpon>dtsDocumenten.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsDocumenten.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsDocumenten.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources\dtsDocumenten.xss">
+      <DependentUpon>dtsDocumenten.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsDocs.xsc">
+      <DependentUpon>dtsDocs.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsDocs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>dtsDocs.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSources\dtsDocs.xss">
+      <DependentUpon>dtsDocs.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsSjabloon.xsc">
+      <DependentUpon>dtsSjabloon.xsd</DependentUpon>
+    </None>
+    <None Include="DataSources\dtsSjabloon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsSjabloon.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSources\dtsSjabloon.xss">
+      <DependentUpon>dtsSjabloon.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
