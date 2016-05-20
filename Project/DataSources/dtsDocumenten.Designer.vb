@@ -491,7 +491,8 @@ Partial Public Class DBDocumentenDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class AuteursjabDataTable
-        Inherits Global.System.Data.TypedTableBase(Of AuteursjabRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnAuteursjab_ID As Global.System.Data.DataColumn
         
@@ -637,6 +638,12 @@ Partial Public Class DBDocumentenDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindByAuteursjab_ID(ByVal Auteursjab_ID As Integer) As AuteursjabRow
             Return CType(Me.Rows.Find(New Object() {Auteursjab_ID}),AuteursjabRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -826,7 +833,8 @@ Partial Public Class DBDocumentenDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class CodeDataTable
-        Inherits Global.System.Data.TypedTableBase(Of CodeRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnCode As Global.System.Data.DataColumn
         
@@ -1056,6 +1064,12 @@ Partial Public Class DBDocumentenDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As CodeDataTable = CType(MyBase.Clone,CodeDataTable)
             cln.InitVars
@@ -1265,7 +1279,8 @@ Partial Public Class DBDocumentenDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class DienstenDataTable
-        Inherits Global.System.Data.TypedTableBase(Of DienstenRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnDienst As Global.System.Data.DataColumn
         
@@ -1361,6 +1376,12 @@ Partial Public Class DBDocumentenDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindByDienst(ByVal Dienst As String) As DienstenRow
             Return CType(Me.Rows.Find(New Object() {Dienst}),DienstenRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1527,7 +1548,8 @@ Partial Public Class DBDocumentenDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class InstellingenDataTable
-        Inherits Global.System.Data.TypedTableBase(Of InstellingenRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnPaswoordConfiguratie As Global.System.Data.DataColumn
         
@@ -1627,6 +1649,12 @@ Partial Public Class DBDocumentenDataSet
             rowInstellingenRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowInstellingenRow)
             Return rowInstellingenRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1794,7 +1822,8 @@ Partial Public Class DBDocumentenDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class BestemmelingDataTable
-        Inherits Global.System.Data.TypedTableBase(Of BestemmelingRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnBestemmeling_ID As Global.System.Data.DataColumn
         
@@ -1960,6 +1989,12 @@ Partial Public Class DBDocumentenDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindByBestemmeling_ID(ByVal Bestemmeling_ID As Integer) As BestemmelingRow
             Return CType(Me.Rows.Find(New Object() {Bestemmeling_ID}),BestemmelingRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2157,7 +2192,8 @@ Partial Public Class DBDocumentenDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class SAV_DocumentenDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SAV_DocumentenRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnSleutel As Global.System.Data.DataColumn
         
@@ -2373,6 +2409,12 @@ Partial Public Class DBDocumentenDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindBySleutel(ByVal Sleutel As Long) As SAV_DocumentenRow
             Return CType(Me.Rows.Find(New Object() {Sleutel}),SAV_DocumentenRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2597,7 +2639,8 @@ Partial Public Class DBDocumentenDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class AuteursDataTable
-        Inherits Global.System.Data.TypedTableBase(Of AuteursRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnAuteurID As Global.System.Data.DataColumn
         
@@ -2713,6 +2756,12 @@ Partial Public Class DBDocumentenDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindByAuteurID(ByVal AuteurID As String) As AuteursRow
             Return CType(Me.Rows.Find(New Object() {AuteurID}),AuteursRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6644,486 +6693,486 @@ Namespace DBDocumentenDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT     Sleutel, Auteurid, Code, Volgnummer, Locatie, Sjabloon, Datum_create, " & _
-                "Datum_doc, Titel, Trefwoord, Afzender, Bestandsnaam, Firma" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM         SAV_Doc" & _
-                "umenten" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY Sleutel DESC"
+            Me._commandCollection(0).CommandText = "SELECT     Sleutel, Auteurid, Code, Volgnummer, Locatie, Sjabloon, Datum_create, "& _ 
+                "Datum_doc, Titel, Trefwoord, Afzender, Bestandsnaam, Firma"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         SAV_Doc"& _ 
+                "umenten"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY Sleutel DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "INSERT INTO SAV_Documenten" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         (Auteurid, Code, Volgnummer," & _
-                " Locatie, Sjabloon, Datum_create, Datum_doc, Titel, Trefwoord, Afzender, Bestand" & _
-                "snaam, Firma)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "VALUES        (@Auteurid,@Code,@Volgnummer,@Locatie,@Sjabloon,@Da" & _
-                "tum_create,@Datum_doc,@Titel,@Trefwoord,@Afzender,@Bestandsnaam,); " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT Sleu" & _
-                "tel, Auteurid, Code, Volgnummer, Locatie, Sjabloon, Datum_create, Datum_doc, Tit" & _
-                "el, Trefwoord, Afzender, Bestandsnaam, Firma FROM SAV_Documenten WHERE (Sleutel " & _
+            Me._commandCollection(1).CommandText = "INSERT INTO SAV_Documenten"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Auteurid, Code, Volgnummer,"& _ 
+                " Locatie, Sjabloon, Datum_create, Datum_doc, Titel, Trefwoord, Afzender, Bestand"& _ 
+                "snaam, Firma)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@Auteurid,@Code,@Volgnummer,@Locatie,@Sjabloon,@Da"& _ 
+                "tum_create,@Datum_doc,@Titel,@Trefwoord,@Afzender,@Bestandsnaam,); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Sleu"& _ 
+                "tel, Auteurid, Code, Volgnummer, Locatie, Sjabloon, Datum_create, Datum_doc, Tit"& _ 
+                "el, Trefwoord, Afzender, Bestandsnaam, Firma FROM SAV_Documenten WHERE (Sleutel "& _ 
                 "= SCOPE_IDENTITY()) ORDER BY Sleutel DESC"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Auteurid", Global.System.Data.SqlDbType.[Char], 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Auteurid", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Code", Global.System.Data.SqlDbType.NChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "Code", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Volgnummer", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Volgnummer", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Locatie", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Locatie", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sjabloon", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Sjabloon", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Datum_create", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Datum_create", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Datum_doc", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Datum_doc", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Titel", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Titel", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Trefwoord", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Trefwoord", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Afzender", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Afzender", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Bestandsnaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Auteurid", Global.System.Data.SqlDbType.[Char], 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Auteurid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Code", Global.System.Data.SqlDbType.NChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "Code", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Volgnummer", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Volgnummer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Locatie", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Locatie", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sjabloon", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Sjabloon", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Datum_create", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Datum_create", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Datum_doc", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Datum_doc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Titel", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Titel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Trefwoord", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Trefwoord", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Afzender", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Afzender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Bestandsnaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT MAX(Sleutel) AS VolgendeSleutel " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM SAV_Documenten"
+            Me._commandCollection(2).CommandText = "SELECT MAX(Sleutel) AS VolgendeSleutel "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM SAV_Documenten"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "UPDATE       SAV_Documenten" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SET                Bestandsnaam = @Bestandsnaam, Loc" & _
-                "atie = @Bestandsnaam" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (Bestandsnaam = @Original_Naam)"
+            Me._commandCollection(3).CommandText = "UPDATE       SAV_Documenten"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                Bestandsnaam = @Bestandsnaam, Loc"& _ 
+                "atie = @Bestandsnaam"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Bestandsnaam = @Original_Naam)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Bestandsnaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Naam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Bestandsnaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Naam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "UPDATE       SAV_Documenten" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SET                Titel = @Titel" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (Bes" & _
+            Me._commandCollection(4).CommandText = "UPDATE       SAV_Documenten"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                Titel = @Titel"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Bes"& _ 
                 "tandsnaam = @Bestandsnaam)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Titel", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Titel", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Bestandsnaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Titel", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Titel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Bestandsnaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "UPDATE    SAV_Documenten" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SET              Volgnummer = Sleutel, Bestandsnaam = @" & _
-                "nieuweNaam" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE     (Sleutel = @param)"
+            Me._commandCollection(5).CommandText = "UPDATE    SAV_Documenten"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET              Volgnummer = Sleutel, Bestandsnaam = @"& _ 
+                "nieuweNaam"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (Sleutel = @param)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nieuweNaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@param", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Sleutel", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nieuweNaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@param", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Sleutel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "DELETE FROM SAV_Documenten" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE     (Bestandsnaam = @Bestandsnaam)"
+            Me._commandCollection(6).CommandText = "DELETE FROM SAV_Documenten"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (Bestandsnaam = @Bestandsnaam)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Bestandsnaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Bestandsnaam", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Bestandsnaam", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
-        Public Overridable Overloads Function Fill(ByVal dataTable As DBDocumentenDataSet.SAV_DocumentenDataTable) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DBDocumentenDataSet.SAV_DocumentenDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = True) Then
-                dataTable.Clear()
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
-        Public Overridable Overloads Function GetData() As DBDocumentenDataSet.SAV_DocumentenDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DBDocumentenDataSet.SAV_DocumentenDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Dim dataTable As DBDocumentenDataSet.SAV_DocumentenDataTable = New DBDocumentenDataSet.SAV_DocumentenDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function Update(ByVal dataTable As DBDocumentenDataSet.SAV_DocumentenDataTable) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DBDocumentenDataSet.SAV_DocumentenDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function Update(ByVal dataSet As DBDocumentenDataSet) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DBDocumentenDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "SAV_Documenten")
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(dataRows)
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, True)> _
-        Public Overridable Overloads Function Delete(ByVal Original_Sleutel As Long) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Sleutel, Long)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_Sleutel As Long) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Sleutel,Long)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open()
+                Me.Adapter.DeleteCommand.Connection.Open
             End If
-            Try
+            Try 
                 Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close()
+                    Me.Adapter.DeleteCommand.Connection.Close
                 End If
             End Try
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, True)> _
-        Public Overridable Overloads Function Insert(ByVal Auteurid As String, ByVal Code As String, ByVal Volgnummer As Long, ByVal Locatie As String, ByVal Sjabloon As String, ByVal Datum_create As Date, ByVal Datum_doc As Date, ByVal Titel As String, ByVal Trefwoord As String, ByVal Afzender As String, ByVal Bestandsnaam As String, ByVal Firma As String) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal Auteurid As String, ByVal Code As String, ByVal Volgnummer As Long, ByVal Locatie As String, ByVal Sjabloon As String, ByVal Datum_create As Date, ByVal Datum_doc As Date, ByVal Titel As String, ByVal Trefwoord As String, ByVal Afzender As String, ByVal Bestandsnaam As String, ByVal Firma As String) As Integer
             If (Auteurid Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Auteurid")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Auteurid, String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Auteurid,String)
             End If
             If (Code Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Code")
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Code, String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Code,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(Volgnummer, Long)
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(Volgnummer,Long)
             If (Locatie Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Locatie")
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Locatie, String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Locatie,String)
             End If
             If (Sjabloon Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Sjabloon")
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Sjabloon, String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Sjabloon,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(Datum_create, Date)
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(Datum_doc, Date)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(Datum_create,Date)
+            Me.Adapter.InsertCommand.Parameters(6).Value = CType(Datum_doc,Date)
             If (Titel Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Titel")
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Titel, String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Titel,String)
             End If
             If (Trefwoord Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Trefwoord")
             Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Trefwoord, String)
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Trefwoord,String)
             End If
             If (Afzender Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(Afzender, String)
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(Afzender,String)
             End If
             If (Bestandsnaam Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Bestandsnaam")
             Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(Bestandsnaam, String)
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(Bestandsnaam,String)
             End If
             If (Firma Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(11).Value = CType(Firma, String)
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(Firma,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open()
+                Me.Adapter.InsertCommand.Connection.Open
             End If
-            Try
+            Try 
                 Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close()
+                    Me.Adapter.InsertCommand.Connection.Close
                 End If
             End Try
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
-        Public Overridable Overloads Function Update(ByVal Auteurid As String, ByVal Code As String, ByVal Volgnummer As Long, ByVal Locatie As String, ByVal Sjabloon As String, ByVal Datum_create As Date, ByVal Datum_doc As Date, ByVal Titel As String, ByVal Trefwoord As String, ByVal Afzender As String, ByVal Bestandsnaam As String, ByVal Firma As String, ByVal Original_Sleutel As Long, ByVal Sleutel As Long) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal Auteurid As String, ByVal Code As String, ByVal Volgnummer As Long, ByVal Locatie As String, ByVal Sjabloon As String, ByVal Datum_create As Date, ByVal Datum_doc As Date, ByVal Titel As String, ByVal Trefwoord As String, ByVal Afzender As String, ByVal Bestandsnaam As String, ByVal Firma As String, ByVal Original_Sleutel As Long, ByVal Sleutel As Long) As Integer
             If (Auteurid Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Auteurid")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Auteurid, String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Auteurid,String)
             End If
             If (Code Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Code")
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Code, String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Code,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Volgnummer, Long)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Volgnummer,Long)
             If (Locatie Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Locatie")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Locatie, String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Locatie,String)
             End If
             If (Sjabloon Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Sjabloon")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Sjabloon, String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Sjabloon,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Datum_create, Date)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Datum_doc, Date)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Datum_create,Date)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Datum_doc,Date)
             If (Titel Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Titel")
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Titel, String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Titel,String)
             End If
             If (Trefwoord Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Trefwoord")
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Trefwoord, String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Trefwoord,String)
             End If
             If (Afzender Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Afzender, String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Afzender,String)
             End If
             If (Bestandsnaam Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Bestandsnaam")
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Bestandsnaam, String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Bestandsnaam,String)
             End If
             If (Firma Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Firma, String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Firma,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Sleutel, Long)
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Sleutel, Long)
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Sleutel,Long)
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Sleutel,Long)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open()
+                Me.Adapter.UpdateCommand.Connection.Open
             End If
-            Try
+            Try 
                 Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
                 Return returnValue
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close()
+                    Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
-        Public Overridable Overloads Function Update(ByVal Auteurid As String, ByVal Code As String, ByVal Volgnummer As Long, ByVal Locatie As String, ByVal Sjabloon As String, ByVal Datum_create As Date, ByVal Datum_doc As Date, ByVal Titel As String, ByVal Trefwoord As String, ByVal Afzender As String, ByVal Bestandsnaam As String, ByVal Firma As String, ByVal Original_Sleutel As Long) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal Auteurid As String, ByVal Code As String, ByVal Volgnummer As Long, ByVal Locatie As String, ByVal Sjabloon As String, ByVal Datum_create As Date, ByVal Datum_doc As Date, ByVal Titel As String, ByVal Trefwoord As String, ByVal Afzender As String, ByVal Bestandsnaam As String, ByVal Firma As String, ByVal Original_Sleutel As Long) As Integer
             Return Me.Update(Auteurid, Code, Volgnummer, Locatie, Sjabloon, Datum_create, Datum_doc, Titel, Trefwoord, Afzender, Bestandsnaam, Firma, Original_Sleutel, Original_Sleutel)
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, False)> _
-        Public Overridable Overloads Function InsertRow(ByVal Auteurid As String, ByVal Code As String, ByVal Volgnummer As Long, ByVal Locatie As String, ByVal Sjabloon As String, ByVal Datum_create As Date, ByVal Datum_doc As Date, ByVal Titel As String, ByVal Trefwoord As String, ByVal Afzender As String, ByVal Bestandsnaam As String) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertRow(ByVal Auteurid As String, ByVal Code As String, ByVal Volgnummer As Long, ByVal Locatie As String, ByVal Sjabloon As String, ByVal Datum_create As Date, ByVal Datum_doc As Date, ByVal Titel As String, ByVal Trefwoord As String, ByVal Afzender As String, ByVal Bestandsnaam As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
             If (Auteurid Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Auteurid")
             Else
-                command.Parameters(0).Value = CType(Auteurid, String)
+                command.Parameters(0).Value = CType(Auteurid,String)
             End If
             If (Code Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Code")
             Else
-                command.Parameters(1).Value = CType(Code, String)
+                command.Parameters(1).Value = CType(Code,String)
             End If
-            command.Parameters(2).Value = CType(Volgnummer, Long)
+            command.Parameters(2).Value = CType(Volgnummer,Long)
             If (Locatie Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Locatie")
             Else
-                command.Parameters(3).Value = CType(Locatie, String)
+                command.Parameters(3).Value = CType(Locatie,String)
             End If
             If (Sjabloon Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Sjabloon")
             Else
-                command.Parameters(4).Value = CType(Sjabloon, String)
+                command.Parameters(4).Value = CType(Sjabloon,String)
             End If
-            command.Parameters(5).Value = CType(Datum_create, Date)
-            command.Parameters(6).Value = CType(Datum_doc, Date)
+            command.Parameters(5).Value = CType(Datum_create,Date)
+            command.Parameters(6).Value = CType(Datum_doc,Date)
             If (Titel Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Titel")
             Else
-                command.Parameters(7).Value = CType(Titel, String)
+                command.Parameters(7).Value = CType(Titel,String)
             End If
             If (Trefwoord Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Trefwoord")
             Else
-                command.Parameters(8).Value = CType(Trefwoord, String)
+                command.Parameters(8).Value = CType(Trefwoord,String)
             End If
             If (Afzender Is Nothing) Then
                 command.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(9).Value = CType(Afzender, String)
+                command.Parameters(9).Value = CType(Afzender,String)
             End If
             If (Bestandsnaam Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Bestandsnaam")
             Else
-                command.Parameters(10).Value = CType(Bestandsnaam, String)
+                command.Parameters(10).Value = CType(Bestandsnaam,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SelectVolgendeSleutel() As Object
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SelectVolgendeSleutel() As Object
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Object
-            Try
+            Try 
                 returnValue = command.ExecuteScalar
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((returnValue Is Nothing) _
+            If ((returnValue Is Nothing)  _
                         OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
                 Return Nothing
             Else
-                Return CType(returnValue, Object)
+                Return CType(returnValue,Object)
             End If
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function UpdateLocatie(ByVal Bestandsnaam As String, ByVal Original_Naam As String) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function UpdateLocatie(ByVal Bestandsnaam As String, ByVal Original_Naam As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             If (Bestandsnaam Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Bestandsnaam")
             Else
-                command.Parameters(0).Value = CType(Bestandsnaam, String)
+                command.Parameters(0).Value = CType(Bestandsnaam,String)
             End If
             If (Original_Naam Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Naam")
             Else
-                command.Parameters(1).Value = CType(Original_Naam, String)
+                command.Parameters(1).Value = CType(Original_Naam,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, False)> _
-        Public Overridable Overloads Function UpdateTitel(ByVal Titel As String, ByVal Bestandsnaam As String) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function UpdateTitel(ByVal Titel As String, ByVal Bestandsnaam As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (Titel Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Titel")
             Else
-                command.Parameters(0).Value = CType(Titel, String)
+                command.Parameters(0).Value = CType(Titel,String)
             End If
             If (Bestandsnaam Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Bestandsnaam")
             Else
-                command.Parameters(1).Value = CType(Bestandsnaam, String)
+                command.Parameters(1).Value = CType(Bestandsnaam,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, False)> _
-        Public Overridable Overloads Function updateVolgnummer(ByVal nieuweNaam As String, ByVal param As Long) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function updateVolgnummer(ByVal nieuweNaam As String, ByVal param As Long) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
             If (nieuweNaam Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("nieuweNaam")
             Else
-                command.Parameters(0).Value = CType(nieuweNaam, String)
+                command.Parameters(0).Value = CType(nieuweNaam,String)
             End If
-            command.Parameters(1).Value = CType(param, Long)
+            command.Parameters(1).Value = CType(param,Long)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, False)> _
-        Public Overridable Overloads Function VerwijderBestand(ByVal Bestandsnaam As String) As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
+        Public Overloads Overridable Function VerwijderBestand(ByVal Bestandsnaam As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
             If (Bestandsnaam Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Bestandsnaam")
             Else
-                command.Parameters(0).Value = CType(Bestandsnaam, String)
+                command.Parameters(0).Value = CType(Bestandsnaam,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
             Return returnValue

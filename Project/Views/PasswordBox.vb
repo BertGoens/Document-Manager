@@ -21,13 +21,13 @@ Public Class PasswordBox
         Me.Close()
     End Sub
 
-    Public ReadOnly Property getPass() As String
+    Public ReadOnly Property GetPassword() As String
         Get
             Return pass
         End Get
     End Property
 
-    Public ReadOnly Property getStatus() As Boolean
+    Public ReadOnly Property IsPaswoordGiven() As Boolean
         Get
             Return status
         End Get

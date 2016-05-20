@@ -321,7 +321,8 @@ Partial Public Class dtsSjabloon
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class AuteursjabDataTable
-        Inherits Global.System.Data.TypedTableBase(Of AuteursjabRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnAuteursjab_ID As Global.System.Data.DataColumn
         
@@ -470,6 +471,12 @@ Partial Public Class dtsSjabloon
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindByAuteursjab_ID(ByVal Auteursjab_ID As Integer) As AuteursjabRow
             Return CType(Me.Rows.Find(New Object() {Auteursjab_ID}),AuteursjabRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -659,7 +666,8 @@ Partial Public Class dtsSjabloon
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class AuteursDataTable
-        Inherits Global.System.Data.TypedTableBase(Of AuteursRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnAuteurID As Global.System.Data.DataColumn
         
@@ -775,6 +783,12 @@ Partial Public Class dtsSjabloon
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindByAuteurID(ByVal AuteurID As String) As AuteursRow
             Return CType(Me.Rows.Find(New Object() {AuteurID}),AuteursRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

@@ -7,6 +7,7 @@ Public Class Zoeken
     Private _Singleton As Singleton = Singleton.Instance
 
     Private Sub Zoeken_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Icon = My.Resources.Ag
         Me.Refresh()
 
         'Laad de datasources om de zoekparameters te vullen
@@ -129,11 +130,11 @@ Public Class Zoeken
             Dim VerplaatsFileDirectory As String = Path.GetDirectoryName(TeVerplaatsenFilePathAndName)
             'Controleer of het bestand bestaat
             If Not File.Exists(TeVerplaatsenFilePathAndName) Then
-                If PathUtil.IsUncPath(TeVerplaatsenFilePathAndName) Then
-                    MessageBox.Show("Het bestand dat je wil verplaatsen staat niet op een publieke share, " + _
+                If Not PathUtil.IsUncPath(TeVerplaatsenFilePathAndName) Then
+                    MessageBox.Show("Het bestand dat je wil verplaatsen staat niet op een publieke share, " & _
                                     "je kan er van deze computer niet op.", "Bestand niet gevonden")
                 Else
-                    MessageBox.Show("Het bestand dat je wil verplaatsen bestaat niet meer of is manueel verplaatst",
+                    MessageBox.Show("Het bestand dat je wil verplaatsen bestaat niet, is manueel verplaatst of je hebt niet genoeg rechten.",
                                     "Bestand niet gevonden")
                 End If
                 Exit Sub
@@ -142,8 +143,13 @@ Public Class Zoeken
             'Vraag gebruiker een nieuwe locatie om bestand naar te verplaatsen
             Dim dlgFolderLocatie As SaveFileDialog = New SaveFileDialog
             dlgFolderLocatie.FileName = VerplaatsFileName
-            dlgFolderLocatie.InitialDirectory = "\\file-srv\"
-            dlgFolderLocatie.RestoreDirectory = True
+            If String.IsNullOrEmpty(_Singleton.Opslagplaats) Then
+                dlgFolderLocatie.InitialDirectory = TeVerplaatsenFilePathAndName
+                dlgFolderLocatie.RestoreDirectory = True
+            Else
+                dlgFolderLocatie.InitialDirectory = _Singleton.Opslagplaats
+            End If
+
             dlgFolderLocatie.AddExtension = False
             dlgFolderLocatie.CheckPathExists = True
 

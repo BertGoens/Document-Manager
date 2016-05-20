@@ -17,9 +17,6 @@
     End Property
 
     Private _Auteur As Auteur
-    ''' <summary>
-    ''' De auteur voluit geschreven
-    ''' </summary>
     Public Property Auteur() As Auteur
         Get
             Return _Auteur
@@ -37,5 +34,33 @@
     ''' <summary>
     ''' Opslag van beheerderspaswoord om instellingen te wijzigen
     ''' </summary>
-    Public ReadOnly GlobaalPaswoord As String = "boss"
+    Private ReadOnly _GlobaalPaswoord As String = "boss"
+
+    Public Function IsAdminPaswoordCorrect(ByVal Paswoord As String) As Boolean
+        IsGebruikerAdmin = Paswoord.Equals(_GlobaalPaswoord)
+        Return IsGebruikerAdmin
+    End Function
+
+    Private _IsGebruikerAdmin As Boolean = False
+    Public Property IsGebruikerAdmin As Boolean
+        Get
+            Return _IsGebruikerAdmin
+        End Get
+        Private Set(ByVal value As Boolean)
+            _IsGebruikerAdmin = value
+        End Set
+    End Property
+
+    Private _Opslagplaats As String
+    ''' <summary>
+    ''' De auteur voluit geschreven
+    ''' </summary>
+    Public Property Opslagplaats() As String
+        Get
+            Return _Opslagplaats
+        End Get
+        Set(ByVal value As String)
+            _Opslagplaats = value
+        End Set
+    End Property
 End Class

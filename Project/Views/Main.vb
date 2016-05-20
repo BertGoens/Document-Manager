@@ -97,7 +97,7 @@ Public Class Main
     Friend WithEvents BestemmelingBindingSource As System.Windows.Forms.BindingSource
     Private WithEvents tbaBestemmeling As DM.DBDocumentenDataSetTableAdapters.BestemmelingTableAdapter
     Friend WithEvents AdresLabel As System.Windows.Forms.Label
-    Friend WithEvents BtnMaakBrief As System.Windows.Forms.Button
+    Friend WithEvents btnMaakBrief As System.Windows.Forms.Button
     Friend WithEvents Bestemmeling_NieuwWijzig As System.Windows.Forms.Button
     Friend WithEvents CodeBindingSource2 As System.Windows.Forms.BindingSource
     Private WithEvents DtsComboSjabloon As DM.dtsComboSjabloon
@@ -115,6 +115,8 @@ Public Class Main
     Friend WithEvents ContactPersoonTxt As System.Windows.Forms.TextBox
     Friend WithEvents btnBestandKoppelen As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Private WithEvents lblConfiguratiePad As System.Windows.Forms.Label
+    Private WithEvents lblConfiguratiePadInfo As System.Windows.Forms.Label
 
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
@@ -139,7 +141,7 @@ Public Class Main
         Me.Label6 = New System.Windows.Forms.Label()
         Me.mtgccboSjabloon = New MTGCComboBox()
         Me.Bestemmeling_NieuwWijzig = New System.Windows.Forms.Button()
-        Me.BtnMaakBrief = New System.Windows.Forms.Button()
+        Me.btnMaakBrief = New System.Windows.Forms.Button()
         Me.AdresLabel = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.mtgccboBestemmeling = New MTGCComboBox()
@@ -163,6 +165,8 @@ Public Class Main
         Me.LbLAuteur = New System.Windows.Forms.Label()
         Me.LblCode = New System.Windows.Forms.Label()
         Me.TabPageConfiguratie = New System.Windows.Forms.TabPage()
+        Me.lblConfiguratiePad = New System.Windows.Forms.Label()
+        Me.lblConfiguratiePadInfo = New System.Windows.Forms.Label()
         Me.BestemmelingButton = New System.Windows.Forms.Button()
         Me.CodesButton = New System.Windows.Forms.Button()
         Me.AuteurssjablonenButton = New System.Windows.Forms.Button()
@@ -218,7 +222,7 @@ Public Class Main
         Me.TabPageNieuw.Controls.Add(Me.Label6)
         Me.TabPageNieuw.Controls.Add(Me.mtgccboSjabloon)
         Me.TabPageNieuw.Controls.Add(Me.Bestemmeling_NieuwWijzig)
-        Me.TabPageNieuw.Controls.Add(Me.BtnMaakBrief)
+        Me.TabPageNieuw.Controls.Add(Me.btnMaakBrief)
         Me.TabPageNieuw.Controls.Add(Me.AdresLabel)
         Me.TabPageNieuw.Controls.Add(Me.Label7)
         Me.TabPageNieuw.Controls.Add(Me.mtgccboBestemmeling)
@@ -412,15 +416,15 @@ Public Class Main
         Me.Bestemmeling_NieuwWijzig.Text = "Nieuw/Wijzig"
         Me.Bestemmeling_NieuwWijzig.UseVisualStyleBackColor = True
         '
-        'BtnMaakBrief
+        'btnMaakBrief
         '
-        Me.BtnMaakBrief.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMaakBrief.Location = New System.Drawing.Point(106, 388)
-        Me.BtnMaakBrief.Name = "BtnMaakBrief"
-        Me.BtnMaakBrief.Size = New System.Drawing.Size(118, 49)
-        Me.BtnMaakBrief.TabIndex = 10
-        Me.BtnMaakBrief.Text = "Maak Brief"
-        Me.BtnMaakBrief.UseVisualStyleBackColor = True
+        Me.btnMaakBrief.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMaakBrief.Location = New System.Drawing.Point(106, 388)
+        Me.btnMaakBrief.Name = "btnMaakBrief"
+        Me.btnMaakBrief.Size = New System.Drawing.Size(118, 49)
+        Me.btnMaakBrief.TabIndex = 10
+        Me.btnMaakBrief.Text = "Maak Brief"
+        Me.btnMaakBrief.UseVisualStyleBackColor = True
         '
         'AdresLabel
         '
@@ -665,6 +669,8 @@ Public Class Main
         '
         'TabPageConfiguratie
         '
+        Me.TabPageConfiguratie.Controls.Add(Me.lblConfiguratiePad)
+        Me.TabPageConfiguratie.Controls.Add(Me.lblConfiguratiePadInfo)
         Me.TabPageConfiguratie.Controls.Add(Me.BestemmelingButton)
         Me.TabPageConfiguratie.Controls.Add(Me.CodesButton)
         Me.TabPageConfiguratie.Controls.Add(Me.AuteurssjablonenButton)
@@ -677,9 +683,27 @@ Public Class Main
         Me.TabPageConfiguratie.Text = "Configuratie"
         Me.TabPageConfiguratie.UseVisualStyleBackColor = True
         '
+        'lblConfiguratiePad
+        '
+        Me.lblConfiguratiePad.AutoSize = True
+        Me.lblConfiguratiePad.Location = New System.Drawing.Point(101, 213)
+        Me.lblConfiguratiePad.Name = "lblConfiguratiePad"
+        Me.lblConfiguratiePad.Size = New System.Drawing.Size(36, 13)
+        Me.lblConfiguratiePad.TabIndex = 7
+        Me.lblConfiguratiePad.Text = "CPAD"
+        '
+        'lblConfiguratiePadInfo
+        '
+        Me.lblConfiguratiePadInfo.AutoSize = True
+        Me.lblConfiguratiePadInfo.Location = New System.Drawing.Point(101, 190)
+        Me.lblConfiguratiePadInfo.Name = "lblConfiguratiePadInfo"
+        Me.lblConfiguratiePadInfo.Size = New System.Drawing.Size(85, 13)
+        Me.lblConfiguratiePadInfo.TabIndex = 6
+        Me.lblConfiguratiePadInfo.Text = "Configuratie Pad"
+        '
         'BestemmelingButton
         '
-        Me.BestemmelingButton.Location = New System.Drawing.Point(101, 166)
+        Me.BestemmelingButton.Location = New System.Drawing.Point(101, 123)
         Me.BestemmelingButton.Name = "BestemmelingButton"
         Me.BestemmelingButton.Size = New System.Drawing.Size(143, 23)
         Me.BestemmelingButton.TabIndex = 5
@@ -688,7 +712,7 @@ Public Class Main
         '
         'CodesButton
         '
-        Me.CodesButton.Location = New System.Drawing.Point(101, 212)
+        Me.CodesButton.Location = New System.Drawing.Point(104, 152)
         Me.CodesButton.Name = "CodesButton"
         Me.CodesButton.Size = New System.Drawing.Size(143, 23)
         Me.CodesButton.TabIndex = 4
@@ -697,7 +721,7 @@ Public Class Main
         '
         'AuteurssjablonenButton
         '
-        Me.AuteurssjablonenButton.Location = New System.Drawing.Point(101, 128)
+        Me.AuteurssjablonenButton.Location = New System.Drawing.Point(101, 94)
         Me.AuteurssjablonenButton.Name = "AuteurssjablonenButton"
         Me.AuteurssjablonenButton.Size = New System.Drawing.Size(143, 23)
         Me.AuteurssjablonenButton.TabIndex = 2
@@ -706,7 +730,7 @@ Public Class Main
         '
         'AuteursButton
         '
-        Me.AuteursButton.Location = New System.Drawing.Point(101, 79)
+        Me.AuteursButton.Location = New System.Drawing.Point(101, 65)
         Me.AuteursButton.Name = "AuteursButton"
         Me.AuteursButton.Size = New System.Drawing.Size(143, 23)
         Me.AuteursButton.TabIndex = 1
@@ -740,6 +764,7 @@ Public Class Main
         'TableAdapterManager
         '
         Me.TableAdapterManager.AuteursjabTableAdapter = Me.tbaAuteursjab
+        Me.TableAdapterManager.AuteursTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.UpdateOrder = DM.dtsSjabloonTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -779,6 +804,7 @@ Public Class Main
         Me.TabPageNieuw.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPageConfiguratie.ResumeLayout(False)
+        Me.TabPageConfiguratie.PerformLayout()
         CType(Me.DtsDocs, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DtsComboSjabloon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DtsSjabloon, System.ComponentModel.ISupportInitialize).EndInit()
@@ -790,18 +816,20 @@ Public Class Main
 #End Region
     Private _Singleton As Singleton = Singleton.Instance
 
-    'variabelen voor bookmarks : uitgelezen uit database na keuze van sjabloon
-    Private BM_afzender As Boolean
-    Private BM_geadresseerde As Boolean
-    Private BM_type As Boolean
-    Private BM_uwbericht As Boolean
-    Private BM_uwkenmerk As Boolean
-    Private BM_onskenmerk As Boolean
-    Private BM_datum As Boolean
-    Private BM_onderwerp As Boolean
-    Private BM_startdocument As Boolean
+    Dim Bookmarks As DocumentBookmarks = New DocumentBookmarks()
+
+    Dim frmDbLijst As DBLijst
+    Dim frmAuteurs As Auteurs
+    Dim frmAuteurSjabloon As AuteurSjabloon
+    Dim frmDiensten As Diensten
+    Dim frmBestemmeling As Bestemmeling
+    Dim frmCodes As Codes
+    Dim frmBestemmelingWijzig As Bestemmeling_wijzig
+    Dim frmZoeken As Zoeken
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Icon = My.Resources.Ag
+
         'Bestemmelingen inladen + als Datasource zetten voor MTGCCombobox
         tbaBestemmeling.Fill(dtsDocumentenDB.Bestemmeling)
         mtgccboBestemmeling.LoadingType = MTGCComboBox.CaricamentoCombo.DataTable
@@ -815,26 +843,14 @@ Public Class Main
         mtgccboAuteurs.SourceDataString = New String(2) {"Auteur", "AuteurID", "MagAllesZien"}
         mtgccboAuteurs.SourceDataTable = dtsDocumentenDB.Auteurs
 
-        InlezenOpgeslagenAuteur()
-
-        'opvullen van lijst Afzender (Aka dienst van auteur) na selectie van auteur
-        tbaAuteursjab.FillByDienst(DtsSjabloon.Auteursjab, mtgccboAuteurs.SelectedItem.col2)
-
-        'mtgccboAfzender Datasource laden
-        mtgccboAfzender.LoadingType = MTGCComboBox.CaricamentoCombo.DataTable
-        mtgccboAfzender.SourceDataString = New String(3) {"afzender", "sjablonenpad", "opslagpad", "afzender_tekst"}
-        mtgccboAfzender.SourceDataTable = DtsSjabloon.Auteursjab
-
-        'dtsDocumentenDB.EnforceConstraints = False
-        InlezenOpgeslagenAfzender()
-
-        CodeTableAdapter.FillByCodeAuteur(dtsDocumentenDB.Code, mtgccboAuteurs.SelectedItem.col2)
-        mtgccboSjabloon.LoadingType = MTGCComboBox.CaricamentoCombo.DataTable
-        mtgccboSjabloon.SourceDataString = New String(2) {"Codetekst", "Code", "Sjablonenpad"}
-        mtgccboSjabloon.SourceDataTable = dtsDocumentenDB.Code
+        If File.Exists(_Singleton.ConfiguratiePad) Then
+            InlezenOpgeslagenAuteur()
+            InlezenOpgeslagenAfzender()
+        End If
 
         DateDoc.Value = Today
         AdresLabel.Text = ""
+        lblConfiguratiePad.Text = _Singleton.ConfiguratiePad
     End Sub
 
     Private Sub InlezenOpgeslagenAuteur()
@@ -889,7 +905,7 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub BtnMaakBrief_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnMaakBrief.Click   '
+    Private Sub BtnMaakBrief_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMaakBrief.Click   '
         If Not ZijnAlleVerplichteVeldenIngevuld() Then
             MsgBox("Alle verplichte velden invullen", MsgBoxStyle.Information)
             Exit Sub
@@ -908,7 +924,13 @@ Public Class Main
         'Documentnaam + Opslagplaats opbouwen
         Dim strBestandsnaam As String = WordDocumentUtil.GetDocumentNaam(mtgccboSjabloon.SelectedItem.col2, _
                     DateDoc.Value, lngVolgnr, _Singleton.Auteur.AuteurKort, TxtTitel.Text, ".docx")
-        Dim strOpslagPadEnBestandsnaam As String = txtOpslagPad.Text & "\" & strBestandsnaam
+
+        Dim strOpslagPadEnBestandsnaam As String
+        If txtOpslagPad.Text.EndsWith("\") Then
+            strOpslagPadEnBestandsnaam = txtOpslagPad.Text & strBestandsnaam
+        Else
+            strOpslagPadEnBestandsnaam = txtOpslagPad.Text & "\" & strBestandsnaam
+        End If
 
         'Controleren of naam legaal is
         If Not PathUtil.IsValidFileName(strBestandsnaam) Then
@@ -925,7 +947,7 @@ Public Class Main
 
         Try
             'Creer het worddocument
-            WordDoc = wordApp.Documents.Add(txtSjabloonPad.Text, False, 0, True)
+            WordDoc = wordApp.Documents.Add(CType(txtSjabloonPad.Text, Object), False, 0, True)
 
             VulBookmarksIn(WordDoc, lngVolgnr, StrSjabloonCode, mtgccboSjabloon.SelectedItem.Text)
 
@@ -949,42 +971,41 @@ Public Class Main
 
     Private Sub VulBookmarksIn(ByRef WordDoc As Microsoft.Office.Interop.Word.Document, ByVal lngVolgnr As Long, ByVal StrSjabloonCode As String, ByVal strDocumentsoort As String)
         Try
-            If BM_afzender = True Then
+            If Bookmarks.BM_afzender = True Then
                 WordDoc.Bookmarks.Item("afzender").Range.Text = mtgccboAfzender.SelectedItem.col4
             End If
         Catch ex As NullReferenceException
         End Try
 
-
-        If BM_geadresseerde = True Then
+        If Bookmarks.BM_geadresseerde = True Then
             WordDoc.Bookmarks.Item("firma").Range.Text = AdresLabel.Text
         End If
 
-        If (BM_type = True And StrSjabloonCode <> "UN") Then
-            WordDoc.Bookmarks.Item("typebrief").Range.Text = strDocumentsoort & " : " & lngVolgnr.ToString()
+        If Bookmarks.BM_type Then
+            If StrSjabloonCode <> "UN" Then
+                WordDoc.Bookmarks.Item("typebrief").Range.Text = strDocumentsoort & " : " & lngVolgnr.ToString()
+            ElseIf StrSjabloonCode = "UN" Then
+                WordDoc.Bookmarks.Item("typebrief").Range.Text = strDocumentsoort
+            End If
         End If
 
-        If (BM_type = True And StrSjabloonCode = "UN") Then
-            WordDoc.Bookmarks.Item("typebrief").Range.Text = strDocumentsoort
-        End If
-
-        If BM_uwbericht = True Then
+        If Bookmarks.BM_uwbericht = True Then
             WordDoc.Bookmarks.Item("uwbericht").Range.Text = txtBericht.Text
         End If
 
-        If BM_uwkenmerk = True Then
+        If Bookmarks.BM_uwkenmerk = True Then
             WordDoc.Bookmarks.Item("uwkenmerk").Range.Text = txtKenmerk.Text
         End If
 
-        If BM_onskenmerk = True Then
+        If Bookmarks.BM_onskenmerk = True Then
             WordDoc.Bookmarks.Item("onskenmerk").Range.Text = lngVolgnr.ToString()
         End If
 
-        If BM_datum = True Then
+        If Bookmarks.BM_datum = True Then
             WordDoc.Bookmarks.Item("DatumDocument").Range.Text = CStr(DateDoc.Value)
         End If
 
-        If BM_onderwerp = True Then
+        If Bookmarks.BM_onderwerp = True Then
             WordDoc.Bookmarks.Item("titel").Range.Text = TxtTitel.Text
         End If
     End Sub
@@ -1007,66 +1028,104 @@ Public Class Main
             If PathUtil.IsUncPath(SaveToFolder) Then
                 txtOpslagPad.Text = SaveToFolder
             Else
-                MessageBox.Show(SaveToFolder & vbCrLf & "Dit is geen publieke share!", "Opslaglocatie geweigerd")
+                Dim UncPathFromLocalPath = PathUtil.GetUNCPathFromLocal(SaveToFolder)
+                If Not Nothing = UncPathFromLocalPath Then
+                    txtOpslagPad.Text = UncPathFromLocalPath
+                Else
+                    Dim strDrive As String = Path.GetPathRoot(SaveToFolder)
+                    MessageBox.Show(SaveToFolder & vbCrLf & strDrive & " is geen publieke share!", "Opslaglocatie geweigerd")
+                End If
             End If
 
         End If
     End Sub
 
+    Private Sub TryOpenAdminForm(ByRef admForm As Form, ByVal NewForm As Form)
+        If _Singleton.IsGebruikerAdmin Then
+            ToonForm(admForm, NewForm)
+        Else 'Gebruiker (nog) geen admin, vraag paswoord
+            If PasswordBox.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                If _Singleton.IsAdminPaswoordCorrect(PasswordBox.GetPassword) Then
+                    ToonForm(admForm, NewForm)
+                Else
+                    MsgBox("Verkeerd paswoord !", MsgBoxStyle.Critical, "Paswoord")
+                End If
+            End If
+        End If
+    End Sub
+
     Private Sub ToonLijst_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToonLijst.Click
-        Dim oForm As DBLijst
-        oForm = New DBLijst()
+        TryOpenAdminForm(frmDbLijst, New DBLijst)
+    End Sub
 
-        PasswordBox.ShowDialog()
-        Dim s As String = PasswordBox.getPass
-
-        'storing the text entered in a string
-
-        If PasswordBox.getStatus Then
-            If s = _Singleton.GlobaalPaswoord Then
+    Private Sub ToonForm(ByRef oForm As Form, ByVal NewForm As Form)
+        If oForm Is Nothing Then
+            oForm = NewForm
+            oForm.Show()
+        Else
+            If oForm.Disposing Or oForm.IsDisposed Then
+                oForm = NewForm
                 oForm.Show()
             Else
-                MsgBox("Verkeerd paswoord !", MsgBoxStyle.Critical, "Paswoord")
+                oForm.Activate()
             End If
         End If
     End Sub
 
     Private Sub AuteursButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AuteursButton.Click
-        Dim oForm As Auteurs
-        oForm = New Auteurs()
-
-        PasswordBox.ShowDialog()
-        Dim s As String = PasswordBox.getPass
-        If PasswordBox.getStatus Then
-            If s = _Singleton.GlobaalPaswoord Then
-                oForm.Show()
-            Else
-                MsgBox("Verkeerd paswoord !", MsgBoxStyle.Critical, "Paswoord")
-            End If
-        End If
-
-
+        TryOpenAdminForm(frmAuteurs, New Auteurs)
     End Sub
 
     Private Sub AuteurssjablonenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AuteurssjablonenButton.Click
-        Dim oForm As AuteurSjabloon
-        oForm = New AuteurSjabloon()
-
-        PasswordBox.ShowDialog()
-        Dim s As String = PasswordBox.getPass
-        If PasswordBox.getStatus Then
-            If s = _Singleton.GlobaalPaswoord Then
-                oForm.Show()
-            Else
-                MsgBox("Verkeerd paswoord !", MsgBoxStyle.Critical, "Paswoord")
-            End If
-        End If
-
+        TryOpenAdminForm(frmAuteurSjabloon, New AuteurSjabloon)
     End Sub
 
+    Private Sub DienstenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)   
+        TryOpenAdminForm(frmDiensten, New Diensten)
+    End Sub
+
+    Private Sub CodesButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CodesButton.Click
+        TryOpenAdminForm(frmCodes, New Codes)
+    End Sub
+
+    Private Sub BestemmelingButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BestemmelingButton.Click
+        TryOpenAdminForm(frmBestemmeling, New Bestemmeling)
+    End Sub
+
+    Private Sub Bestemmeling_NieuwWijzig_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bestemmeling_NieuwWijzig.Click
+        'Moet dit geen admin console zijn?
+        ToonForm(frmBestemmelingWijzig, New Bestemmeling_wijzig)
+    End Sub
+
+    ''' <summary>
+    ''' Gebeurt bij de configuratie van het bestand, daarna niet meer?
+    ''' </summary>
     Private Sub AuteurCombobox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mtgccboAuteurs.SelectedIndexChanged
-        Dim AuteurLang As String = mtgccboAuteurs.SelectedItem.col1
-        Dim AuteurKort As String = mtgccboAuteurs.SelectedItem.col2
+        'opvullen van lijst Afzender na selectie van auteur
+        tbaAuteursjab.FillByDienst(DtsSjabloon.Auteursjab, mtgccboAuteurs.SelectedItem.col2)
+
+        'mtgccboAfzender DataSource zetten
+        mtgccboAfzender.Items.Clear()
+        mtgccboAfzender.Text = ""
+
+        'mtgccboAfzender
+        mtgccboAfzender.LoadingType = MTGCComboBox.CaricamentoCombo.DataTable
+        mtgccboAfzender.SourceDataString = New String(3) {"afzender", "sjablonenpad", "opslagpad", "afzender_tekst"}
+        mtgccboAfzender.SourceDataTable = DtsSjabloon.Auteursjab
+
+        'Setting the source data of the combobox
+        mtgccboSjabloon.Items.Clear()
+        mtgccboSjabloon.Text = ""
+
+        dtsDocumentenDB.EnforceConstraints = False 'Database niet in orde
+        CodeTableAdapter.FillByCodeAuteur(dtsDocumentenDB.Code, mtgccboAuteurs.SelectedItem.col2)
+
+        mtgccboSjabloon.LoadingType = MTGCComboBox.CaricamentoCombo.DataTable
+        mtgccboSjabloon.SourceDataString = New String(2) {"Codetekst", "Code", "Sjablonenpad"}
+        mtgccboSjabloon.SourceDataTable = dtsDocumentenDB.Code
+
+        Dim AuteurLang As String = Me.mtgccboAuteurs.SelectedItem.col1
+        Dim AuteurKort As String = Me.mtgccboAuteurs.SelectedItem.col2
         Dim MagAllesZien As Boolean = False
         Try
             MagAllesZien = Me.mtgccboAuteurs.SelectedItem.col3
@@ -1079,7 +1138,11 @@ Public Class Main
     End Sub
 
     Private Sub mtgccboAfzender_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mtgccboAfzender.SelectedIndexChanged
-        Me.txtOpslagPad.Text = mtgccboAfzender.SelectedItem.col3
+        Try
+            Me.txtOpslagPad.Text = mtgccboAfzender.SelectedItem.col3
+        Catch ex As Exception
+        End Try
+
         Me.btnVoorkeurOpslaan.Visible = True
     End Sub
 
@@ -1108,57 +1171,6 @@ Public Class Main
 
     End Sub
 
-    Private Sub DienstenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim oForm As Diensten
-        oForm = New Diensten()
-
-        PasswordBox.ShowDialog()
-        Dim s As String = PasswordBox.getPass
-        If PasswordBox.getStatus Then
-            If s = _Singleton.GlobaalPaswoord Then
-                oForm.Show()
-            Else
-                MsgBox("Verkeerd paswoord !", MsgBoxStyle.Critical, "Paswoord")
-            End If
-        End If
-    End Sub
-
-    Private Sub CodesButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CodesButton.Click
-
-        Dim oForm As Codes
-        oForm = New Codes()
-
-        PasswordBox.ShowDialog()
-        Dim s As String = PasswordBox.getPass
-        If PasswordBox.getStatus Then
-            If s = _Singleton.GlobaalPaswoord Then
-                oForm.Show()
-            Else
-                MsgBox("Verkeerd paswoord !", MsgBoxStyle.Critical, "Paswoord")
-            End If
-        End If
-
-
-    End Sub
-
-    Private Sub BestemmelingButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BestemmelingButton.Click
-
-        Dim oForm As Bestemmeling
-        oForm = New Bestemmeling()
-
-        PasswordBox.ShowDialog()
-        Dim s As String = PasswordBox.getPass
-        If PasswordBox.getStatus Then
-            If s = _Singleton.GlobaalPaswoord Then
-                oForm.Show()
-            Else
-                MsgBox("Verkeerd paswoord !", MsgBoxStyle.Critical, "Paswoord")
-            End If
-        End If
-
-
-    End Sub
-
     Private Sub BestemmelingComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mtgccboBestemmeling.SelectedIndexChanged
         Try
             AdresLabel.Text = mtgccboBestemmeling.SelectedItem.col1 & vbCrLf & _
@@ -1184,12 +1196,6 @@ Public Class Main
         ContactPersoonTxt.Text = ""
     End Sub
 
-    Private Sub Bestemmeling_NieuwWijzig_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bestemmeling_NieuwWijzig.Click
-        Dim oForm As Bestemmeling_wijzig
-        oForm = New Bestemmeling_wijzig()
-        oForm.Show()
-    End Sub
-
     Private Sub SjabloonComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mtgccboSjabloon.SelectedIndexChanged
         Me.txtSjabloonPad.Text = Me.mtgccboSjabloon.SelectedItem.col3
 
@@ -1202,16 +1208,15 @@ Public Class Main
         Try
             Do While reader.Read()
                 If (reader(1).ToString() = mtgccboSjabloon.SelectedItem.col2) Then
-                    BM_afzender = CBool(reader("BM_afzender").ToString())
-                    BM_geadresseerde = CBool(reader("BM_geadresseerde").ToString())
-                    BM_type = CBool(reader("BM_type").ToString())
-                    BM_uwbericht = CBool(reader("BM_uwbericht").ToString())
-                    BM_uwkenmerk = CBool(reader("BM_uwkenmerk").ToString())
-                    BM_onskenmerk = CBool(reader("BM_onskenmerk").ToString())
-                    BM_datum = CBool(reader("BM_datum").ToString())
-                    BM_onderwerp = CBool(reader("BM_onderwerp").ToString())
-                    BM_startdocument = CBool(reader("BM_startdocument").ToString())
-
+                    Bookmarks.BM_afzender = CBool(reader("BM_afzender").ToString())
+                    Bookmarks.BM_geadresseerde = CBool(reader("BM_geadresseerde").ToString())
+                    Bookmarks.BM_type = CBool(reader("BM_type").ToString())
+                    Bookmarks.BM_uwbericht = CBool(reader("BM_uwbericht").ToString())
+                    Bookmarks.BM_uwkenmerk = CBool(reader("BM_uwkenmerk").ToString())
+                    Bookmarks.BM_onskenmerk = CBool(reader("BM_onskenmerk").ToString())
+                    Bookmarks.BM_datum = CBool(reader("BM_datum").ToString())
+                    Bookmarks.BM_onderwerp = CBool(reader("BM_onderwerp").ToString())
+                    Bookmarks.BM_startdocument = CBool(reader("BM_startdocument").ToString())
                     Exit Do
                 End If
             Loop
@@ -1240,10 +1245,11 @@ Public Class Main
         End If
     End Sub
 
+    ''' <summary>
+    ''' Toon de form Zoeken
+    ''' </summary>
     Private Sub ZoekenBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnZoeken.Click
-        'Open Zoeken form
-        Dim oForm As Zoeken = New Zoeken()
-        oForm.Show()
+        ToonForm(frmZoeken, New Zoeken)
     End Sub
 
     Private Sub BtnBestandKoppelen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBestandKoppelen.Click
@@ -1324,4 +1330,13 @@ Public Class Main
 
         Return True
     End Function
+
+    Private Sub lblConfiguratiePad_Click(sender As Object, e As EventArgs) Handles lblConfiguratiePad.Click
+        Process.Start(Path.GetDirectoryName(_Singleton.ConfiguratiePad))
+    End Sub
+
+    Private Sub txtOpslagPad_TextChanged(sender As Object, e As EventArgs) Handles txtOpslagPad.TextChanged
+        _Singleton.Opslagplaats = txtOpslagPad.Text
+    End Sub
+
 End Class

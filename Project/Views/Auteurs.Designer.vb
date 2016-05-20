@@ -22,30 +22,30 @@ Partial Class Auteurs
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Auteurs))
         Me.AuteursBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.AuteursBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DBDocumentenDataSet = New DM.DBDocumentenDataSet
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        Me.AuteursBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton
-        Me.SluitenButton = New System.Windows.Forms.ToolStripButton
-        Me.AuteursTableAdapter = New DM.DBDocumentenDataSetTableAdapters.AuteursTableAdapter
-        Me.TableAdapterManager = New DM.DBDocumentenDataSetTableAdapters.TableAdapterManager
-        Me.AuteursDataGridView = New System.Windows.Forms.DataGridView
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.DBDocumentenDataSet = New DM.DBDocumentenDataSet()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AuteursBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.SluitenButton = New System.Windows.Forms.ToolStripButton()
+        Me.AuteursTableAdapter = New DM.DBDocumentenDataSetTableAdapters.AuteursTableAdapter()
+        Me.TableAdapterManager = New DM.DBDocumentenDataSetTableAdapters.TableAdapterManager()
+        Me.AuteursDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.AuteursBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AuteursBindingNavigator.SuspendLayout()
         CType(Me.AuteursBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +93,7 @@ Partial Class Auteurs
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(36, 22)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -180,7 +180,7 @@ Partial Class Auteurs
         Me.SluitenButton.Image = CType(resources.GetObject("SluitenButton.Image"), System.Drawing.Image)
         Me.SluitenButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.SluitenButton.Name = "SluitenButton"
-        Me.SluitenButton.Size = New System.Drawing.Size(43, 22)
+        Me.SluitenButton.Size = New System.Drawing.Size(47, 22)
         Me.SluitenButton.Text = "Sluiten"
         '
         'AuteursTableAdapter
