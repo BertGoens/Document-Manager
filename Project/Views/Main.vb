@@ -98,7 +98,7 @@ Public Class Main
     Private WithEvents tbaBestemmeling As DM.DBDocumentenDataSetTableAdapters.BestemmelingTableAdapter
     Friend WithEvents AdresLabel As System.Windows.Forms.Label
     Friend WithEvents btnMaakBrief As System.Windows.Forms.Button
-    Friend WithEvents Bestemmeling_NieuwWijzig As System.Windows.Forms.Button
+    Friend WithEvents btnBestemmelingNieuwWijzig As System.Windows.Forms.Button
     Friend WithEvents CodeBindingSource2 As System.Windows.Forms.BindingSource
     Private WithEvents DtsComboSjabloon As DM.dtsComboSjabloon
     Friend WithEvents mtgccboSjabloon As MTGCComboBox
@@ -140,7 +140,7 @@ Public Class Main
         Me.btnSjabloonPadBrowse = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.mtgccboSjabloon = New MTGCComboBox()
-        Me.Bestemmeling_NieuwWijzig = New System.Windows.Forms.Button()
+        Me.btnBestemmelingNieuwWijzig = New System.Windows.Forms.Button()
         Me.btnMaakBrief = New System.Windows.Forms.Button()
         Me.AdresLabel = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -221,7 +221,7 @@ Public Class Main
         Me.TabPageNieuw.Controls.Add(Me.btnSjabloonPadBrowse)
         Me.TabPageNieuw.Controls.Add(Me.Label6)
         Me.TabPageNieuw.Controls.Add(Me.mtgccboSjabloon)
-        Me.TabPageNieuw.Controls.Add(Me.Bestemmeling_NieuwWijzig)
+        Me.TabPageNieuw.Controls.Add(Me.btnBestemmelingNieuwWijzig)
         Me.TabPageNieuw.Controls.Add(Me.btnMaakBrief)
         Me.TabPageNieuw.Controls.Add(Me.AdresLabel)
         Me.TabPageNieuw.Controls.Add(Me.Label7)
@@ -407,14 +407,14 @@ Public Class Main
         Me.mtgccboSjabloon.Size = New System.Drawing.Size(304, 21)
         Me.mtgccboSjabloon.TabIndex = 4
         '
-        'Bestemmeling_NieuwWijzig
+        'btnBestemmelingNieuwWijzig
         '
-        Me.Bestemmeling_NieuwWijzig.Location = New System.Drawing.Point(432, 138)
-        Me.Bestemmeling_NieuwWijzig.Name = "Bestemmeling_NieuwWijzig"
-        Me.Bestemmeling_NieuwWijzig.Size = New System.Drawing.Size(109, 23)
-        Me.Bestemmeling_NieuwWijzig.TabIndex = 42
-        Me.Bestemmeling_NieuwWijzig.Text = "Nieuw/Wijzig"
-        Me.Bestemmeling_NieuwWijzig.UseVisualStyleBackColor = True
+        Me.btnBestemmelingNieuwWijzig.Location = New System.Drawing.Point(432, 138)
+        Me.btnBestemmelingNieuwWijzig.Name = "btnBestemmelingNieuwWijzig"
+        Me.btnBestemmelingNieuwWijzig.Size = New System.Drawing.Size(109, 23)
+        Me.btnBestemmelingNieuwWijzig.TabIndex = 42
+        Me.btnBestemmelingNieuwWijzig.Text = "Nieuw/Wijzig"
+        Me.btnBestemmelingNieuwWijzig.UseVisualStyleBackColor = True
         '
         'btnMaakBrief
         '
@@ -818,14 +818,8 @@ Public Class Main
 
     Dim Bookmarks As DocumentBookmarks = New DocumentBookmarks()
 
-    Dim frmDbLijst As DBLijst
-    Dim frmAuteurs As Auteurs
-    Dim frmAuteurSjabloon As AuteurSjabloon
-    Dim frmDiensten As Diensten
-    Dim frmBestemmeling As Bestemmeling
-    Dim frmCodes As Codes
-    Dim frmBestemmelingWijzig As Bestemmeling_wijzig
-    Dim frmZoeken As Zoeken
+    Dim frmDbLijst, frmAuteurs, frmAuteurSjabloon, frmDiensten As Form
+    Dim frmBestemmeling, frmCodes, frmBestemmelingWijzig, frmZoeken As Form
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Icon = My.Resources.Ag
@@ -843,17 +837,33 @@ Public Class Main
         mtgccboAuteurs.SourceDataString = New String(2) {"Auteur", "AuteurID", "MagAllesZien"}
         mtgccboAuteurs.SourceDataTable = dtsDocumentenDB.Auteurs
 
-        If File.Exists(_Singleton.ConfiguratiePad) Then
-            InlezenOpgeslagenAuteur()
-            InlezenOpgeslagenAfzender()
-        End If
-
         DateDoc.Value = Today
         AdresLabel.Text = ""
         lblConfiguratiePad.Text = _Singleton.ConfiguratiePad
+
+        If File.Exists(_Singleton.ConfiguratiePad) Then
+            If InlezenOpgeslagenAuteurMatch() Then
+                InlezenOpgeslagenAfzender()
+            Else
+                'Gebruiker is nog niet geauthenticeerd, verberg knoppen tot hij 'ingelogd' is
+                Dim Toon As Boolean = False
+                VeranderZichtbaarheidGebruikersKnoppen(Toon)
+                Me.Show()
+                MessageBox.Show("U start de applicatie voor de eerste keer op. " & vbCrLf & _
+                                "1: Selecteer uw naam bij Auteur" & vbCrLf &
+                                "2: Selecteer een Afzender" & vbCr &
+                                "Klik daarna op 'Standaard Opslaan'", _
+                                "Welkom", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
     End Sub
 
-    Private Sub InlezenOpgeslagenAuteur()
+    ''' <summary>
+    ''' Leest opgeslagen Auteur in en controleert deze tegenover de auteurs in de database:
+    ''' als hij een gelijke (match) vindt geeft hij True terug,
+    ''' als hij geen match heeft, moet de gebruiker zelf zeggen wie ze zijn.
+    ''' </summary>
+    Private Function InlezenOpgeslagenAuteurMatch() As Boolean
         If File.Exists(_Singleton.ConfiguratiePad) Then
             Try
                 Dim reader As StreamReader = System.IO.File.OpenText(_Singleton.ConfiguratiePad)
@@ -865,18 +875,21 @@ Public Class Main
                     If cboAuteurItemText.Equals(OpgeslagenAuteur) Then
                         'Selecteer hem
                         mtgccboAuteurs.SelectedIndex = i
+                        'instellen zodat combobox vergrendeld is en je geen nieuwe config meer kan maken
+                        Me.mtgccboAuteurs.Enabled = False
+                        Return True
                         Exit For
                     End If
                 Next
                 reader.Dispose()
-                'instellen zodat combobox vergrendeld is en je geen nieuwe config meer kan maken
-                Me.mtgccboAuteurs.Enabled = False
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Onverwachte error")
             End Try
+
+            Return False
         End If
-    End Sub
+    End Function
 
     Private Sub InlezenOpgeslagenAfzender()
         If File.Exists(_Singleton.ConfiguratiePad) Then
@@ -891,13 +904,12 @@ Public Class Main
                     Dim cboAfzenderText As String = mtgccboAfzender.Items.Item(i).Text
                     If cboAfzenderText.Equals(OpgeslagenAfzender) Then
                         mtgccboAfzender.SelectedIndex = i
+                        Me.btnVoorkeurOpslaan.Visible = False
                         Exit For
                     End If
                 Next
 
                 reader.Dispose()
-
-                Me.btnVoorkeurOpslaan.Visible = False
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Onverwachte error")
@@ -911,7 +923,7 @@ Public Class Main
             Exit Sub
         End If
 
-        Dim lngVolgnr As Long = tbaDocumenten.SelectVolgendeSleutel()
+        Dim lngVolgnr As Long = CLng(tbaDocumenten.SelectVolgendeSleutel())
         Dim StrSjabloonCode As String = mtgccboSjabloon.SelectedItem.col2
 
         Dim StrFirma As String
@@ -956,13 +968,13 @@ Public Class Main
             WordDoc.Activate()
 
             'Opslaan 
-            wordApp.ActiveDocument.SaveAs(strOpslagPadEnBestandsnaam)
+            wordApp.ActiveDocument.SaveAs(CType(strOpslagPadEnBestandsnaam, Object))
             wordApp.Documents.Save()
 
             LeegDocumentInformatieVelden()
 
             'sluit de verbinding
-            WordDoc = Nothing
+            'WordDoc = Nothing
 
         Catch ex As Exception
             MsgBox("Er is een fout opgetreden. " & vbCrLf & ex.Message, MsgBoxStyle.Critical, "Error")
@@ -1028,8 +1040,8 @@ Public Class Main
             If PathUtil.IsUncPath(SaveToFolder) Then
                 txtOpslagPad.Text = SaveToFolder
             Else
-                Dim UncPathFromLocalPath = PathUtil.GetUNCPathFromLocal(SaveToFolder)
-                If Not Nothing = UncPathFromLocalPath Then
+                Dim UncPathFromLocalPath As String = PathUtil.GetUNCPathFromLocal(SaveToFolder)
+                If Not UncPathFromLocalPath Is Nothing Then
                     txtOpslagPad.Text = UncPathFromLocalPath
                 Else
                     Dim strDrive As String = Path.GetPathRoot(SaveToFolder)
@@ -1054,10 +1066,6 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub ToonLijst_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToonLijst.Click
-        TryOpenAdminForm(frmDbLijst, New DBLijst)
-    End Sub
-
     Private Sub ToonForm(ByRef oForm As Form, ByVal NewForm As Form)
         If oForm Is Nothing Then
             oForm = NewForm
@@ -1072,6 +1080,10 @@ Public Class Main
         End If
     End Sub
 
+    Private Sub ToonLijst_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToonLijst.Click
+        TryOpenAdminForm(frmDbLijst, New DBLijst)
+    End Sub
+
     Private Sub AuteursButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AuteursButton.Click
         TryOpenAdminForm(frmAuteurs, New Auteurs)
     End Sub
@@ -1080,7 +1092,7 @@ Public Class Main
         TryOpenAdminForm(frmAuteurSjabloon, New AuteurSjabloon)
     End Sub
 
-    Private Sub DienstenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)   
+    Private Sub DienstenButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         TryOpenAdminForm(frmDiensten, New Diensten)
     End Sub
 
@@ -1092,7 +1104,7 @@ Public Class Main
         TryOpenAdminForm(frmBestemmeling, New Bestemmeling)
     End Sub
 
-    Private Sub Bestemmeling_NieuwWijzig_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bestemmeling_NieuwWijzig.Click
+    Private Sub Bestemmeling_NieuwWijzig_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBestemmelingNieuwWijzig.Click
         'Moet dit geen admin console zijn?
         ToonForm(frmBestemmelingWijzig, New Bestemmeling_wijzig)
     End Sub
@@ -1146,28 +1158,39 @@ Public Class Main
         Me.btnVoorkeurOpslaan.Visible = True
     End Sub
 
+    Private Sub VeranderZichtbaarheidGebruikersKnoppen(ByVal Toon As Boolean)
+        btnBestemmelingNieuwWijzig.Visible = Toon
+        btnSjabloonPadBrowse.Visible = Toon
+        btnOpslagPadBrowse.Visible = Toon
+        btnMaakBrief.Visible = Toon
+        btnZoeken.Visible = Toon
+        btnBestandKoppelen.Visible = Toon
+    End Sub
+
     'hier sla je op waar de user zijn application paramaters staan.
     Private Sub Voorkeur_opslaanButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVoorkeurOpslaan.Click
         Try
+            'Wegschrijven 
             Dim sw As StreamWriter = New System.IO.StreamWriter(_Singleton.ConfiguratiePad, False)
-            'Opslaan Auteur
             Dim SelectedAuteur As String = mtgccboAuteurs.SelectedItem.Text
-            sw.WriteLine(SelectedAuteur)
-            'Opslaan Afzender
+            sw.WriteLine(SelectedAuteur) 'Opslaan Auteur
             Dim SelectedAfzender As String = mtgccboAfzender.SelectedItem.Text
-            sw.WriteLine(SelectedAfzender)
+            sw.WriteLine(SelectedAfzender) 'Opslaan Afzender
             'Afsluiten StreamWriter
             sw.Close()
             sw.Dispose()
+
+            'UI
+            'instellen zodat combobox vergrendeld is en je geen nieuwe config meer kan maken
+            Me.btnVoorkeurOpslaan.Visible = False
+            Me.mtgccboAuteurs.Enabled = False
+            'UI Weergeven gebruikersknoppen
+            VeranderZichtbaarheidGebruikersKnoppen(True)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Onverwachte fout")
         End Try
 
         MsgBox("Gegevens opgeslagen", MsgBoxStyle.Information, "Configuratie")
-
-        'instellen zodat combobox vergrendeld is en je geen nieuwe config meer kan maken
-        Me.btnVoorkeurOpslaan.Visible = False
-        Me.mtgccboAuteurs.Enabled = False
 
     End Sub
 
@@ -1258,7 +1281,7 @@ Public Class Main
             Exit Sub
         End If
 
-        Dim lngVolgnr As Long = tbaDocumenten.SelectVolgendeSleutel()
+        Dim lngVolgnr As Long = CLng(tbaDocumenten.SelectVolgendeSleutel())
         Dim StrSjabloonCode As String = mtgccboSjabloon.SelectedItem.col2
 
         Dim StrFirma As String

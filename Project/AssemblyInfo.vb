@@ -9,8 +9,8 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("DocumentManager")> 
-<Assembly: AssemblyDescription("Word Doc manager")> 
+<Assembly: AssemblyTitle("Document Manager")> 
+<Assembly: AssemblyDescription("Word Document Manager")> 
 <Assembly: AssemblyCompany("AZSAV")> 
 <Assembly: AssemblyProduct("")> 
 <Assembly: AssemblyCopyright("")> 
@@ -30,6 +30,6 @@ Imports System.Runtime.InteropServices
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
 
-<Assembly: AssemblyVersion("1.0.2")> 
+<Assembly: AssemblyVersion("1.1.0")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("nl-BE")> 

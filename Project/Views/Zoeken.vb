@@ -10,6 +10,8 @@ Public Class Zoeken
         Me.Icon = My.Resources.Ag
         Me.Refresh()
 
+        dgvZoeken.Update()
+
         'Laad de datasources om de zoekparameters te vullen
         Me.CodeTableAdapter.Fill(DtsZoeken.Code)
         Me.AuteursTableAdapter.Fill(DtsZoeken.Auteurs)
@@ -67,9 +69,9 @@ Public Class Zoeken
             Exit Sub
         End If
 
-
         'Opvragen nieuwe naam
-        Dim nieuweNaam As String = InputBox("Welke nieuwe naam wil je geven aan dit bestand?", "Nieuwe documentsnaam").ToString()
+        Dim nieuweNaam As String = InputBox("Welke nieuwe naam wil je geven aan dit bestand?",
+                                            "Nieuwe documentsnaam", OrigineleTitel)
         Dim extensie As String = ".docx"
 
         'Input controleren
@@ -89,7 +91,6 @@ Public Class Zoeken
         'Hernoem bestand
         Try
             fi.MoveTo(nieuwBestandPadEnNaam)
-            'My.Computer.FileSystem.RenameFile(OrigineelBestandPadEnNaam, nieuwBestandPadEnNaam)
         Catch ex As Exception
             'Mislukt
             MessageBox.Show(ex.Message, "Hernoemen mislukt!")
@@ -97,7 +98,7 @@ Public Class Zoeken
         End Try
 
         'Verander de waardes op de server
-        'db.UpdatLocatie veranderd alleen het pad in de database
+        'db.UpdatLocatie verandert alleen het pad in de database
         Dim bestandenHernoemd As Integer = dbDocumenten.UpdateLocatie(nieuwBestandPadEnNaam, OrigineelBestandPadEnNaam)
         'verander nu de titel in de database
         Dim titelHernoemd As Integer = dbDocumenten.UpdateTitel(nieuweNaam, nieuwBestandPadEnNaam)
@@ -113,8 +114,6 @@ Public Class Zoeken
                             titelHernoemd.ToString() + " titel(s) veranderd " + Environment.NewLine + _
                             "naar " + nieuweNaam, "Bestand(en) hernoemd", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
-
-
     End Sub
 
     Private Sub Zoeken_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
@@ -223,5 +222,11 @@ Public Class Zoeken
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Zoeken_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
+        'Resize Datagrid
+        Dim intDgvZoekenYLocation As Integer = 285
+        dgvZoeken.Height = Me.Size.Height - intDgvZoekenYLocation
     End Sub
 End Class

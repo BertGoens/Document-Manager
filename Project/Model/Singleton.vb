@@ -17,6 +17,9 @@
     End Property
 
     Private _Auteur As Auteur
+    ''' <summary>
+    ''' De auteur voluit geschreven
+    ''' </summary>
     Public Property Auteur() As Auteur
         Get
             Return _Auteur

@@ -23,8 +23,8 @@ Partial Class Zoeken
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DtsZoeken = New DM.dtsZoeken()
         Me.SAV_DocumentenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SAV_DocumentenTableAdapter = New DM.dtsZoekenTableAdapters.SAV_DocumentenTableAdapter()
@@ -104,25 +104,24 @@ Partial Class Zoeken
         '
         Me.dgvZoeken.AllowUserToAddRows = False
         Me.dgvZoeken.AllowUserToDeleteRows = False
-        Me.dgvZoeken.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvZoeken.AutoGenerateColumns = False
+        Me.dgvZoeken.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.dgvZoeken.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvZoeken.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn11, Me.Column1})
         Me.dgvZoeken.DataSource = Me.SAV_DocumentenBindingSource
-        Me.dgvZoeken.Location = New System.Drawing.Point(12, 242)
+        Me.dgvZoeken.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgvZoeken.Location = New System.Drawing.Point(0, 245)
         Me.dgvZoeken.Name = "dgvZoeken"
         Me.dgvZoeken.ReadOnly = True
-        Me.dgvZoeken.Size = New System.Drawing.Size(1072, 348)
+        Me.dgvZoeken.Size = New System.Drawing.Size(1096, 357)
         Me.dgvZoeken.TabIndex = 1
         '
         'DataGridViewTextBoxColumn12
         '
         Me.DataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.DataGridViewTextBoxColumn12.DataPropertyName = "Bestandsnaam"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn12.HeaderText = "Bestandsnaam"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         Me.DataGridViewTextBoxColumn12.ReadOnly = True
@@ -132,9 +131,9 @@ Partial Class Zoeken
         '
         Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.DataGridViewTextBoxColumn9.DataPropertyName = "Titel"
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn9.HeaderText = "Titel"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         Me.DataGridViewTextBoxColumn9.ReadOnly = True
@@ -424,7 +423,6 @@ Partial Class Zoeken
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents dgvZoeken As System.Windows.Forms.DataGridView
     Friend WithEvents AuteursBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents cboAuteurs As System.Windows.Forms.ComboBox
     Friend WithEvents cboDocumentTypeCode As System.Windows.Forms.ComboBox
@@ -461,4 +459,5 @@ Partial Class Zoeken
     Private WithEvents CodeTableAdapter As DM.dtsZoekenTableAdapters.CodeTableAdapter
     Private WithEvents CodeBindingSource As System.Windows.Forms.BindingSource
     Private WithEvents AuteursSAVDocumentenBindingSource As System.Windows.Forms.BindingSource
+    Private WithEvents dgvZoeken As System.Windows.Forms.DataGridView
 End Class
