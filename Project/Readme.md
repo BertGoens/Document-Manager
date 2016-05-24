@@ -35,4 +35,15 @@ Door de bloated reference van MTGCCombobox wil je option strict off (anders krij
 
 #Changes
 (Onder Docman naam Didier Boydens)
-2016-04-08 AN_20160513_8351_BD_Docman Fouten Fix.docx \\wds-srv\Stagiairs_IT\Bert\Stage Tickets\Docman\AN_20160513_8351_BD_Docman Fouten Fix.docx
+Docman ID: 8351
+Titel: Docman Fouten Fix.docx 
+Een verslag met bugs te fixen, hoe ik ge opgelost heb, en opmerkingen over het programma.
+
+#Versioning
+Bij elke (grote) publicatie van het programma wil je deze stappen doorlopen:
+1. Maak Patch notes (voorbeeld: docman ID: 8388)
+2. Verander de titel (visueel) van de forms
+3. Zet de patch notes op een publieke share (liefst zoals de vorige auteur gedaan heeft voor consistentie)
+4. Verander 'ApplicatieInstellingen.vb' (DocmanVersie, DocmanPatchNotesPad)
+5. Controleer of je via Main > Tab: Configuratie > De juiste info krijgt en of je er op kunt klikken
+6. Publish

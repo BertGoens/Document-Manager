@@ -116,7 +116,11 @@ Public Class Main
     Friend WithEvents btnBestandKoppelen As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Private WithEvents lblConfiguratiePad As System.Windows.Forms.Label
+    Private WithEvents lblDocmanVersie As System.Windows.Forms.Label
+    Private WithEvents lblDocmanVersieInfo As System.Windows.Forms.Label
     Private WithEvents lblConfiguratiePadInfo As System.Windows.Forms.Label
+    Private WithEvents lblPatchNotesPad As System.Windows.Forms.Label
+    Private WithEvents lblPatchNotesInfo As System.Windows.Forms.Label
 
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
@@ -166,7 +170,6 @@ Public Class Main
         Me.LblCode = New System.Windows.Forms.Label()
         Me.TabPageConfiguratie = New System.Windows.Forms.TabPage()
         Me.lblConfiguratiePad = New System.Windows.Forms.Label()
-        Me.lblConfiguratiePadInfo = New System.Windows.Forms.Label()
         Me.BestemmelingButton = New System.Windows.Forms.Button()
         Me.CodesButton = New System.Windows.Forms.Button()
         Me.AuteurssjablonenButton = New System.Windows.Forms.Button()
@@ -182,6 +185,11 @@ Public Class Main
         Me.tbaAuteurs = New DM.DBDocumentenDataSetTableAdapters.AuteursTableAdapter()
         Me.tbaBestemmeling = New DM.DBDocumentenDataSetTableAdapters.BestemmelingTableAdapter()
         Me.tbaDocumenten = New DM.DBDocumentenDataSetTableAdapters.SAV_DocumentenTableAdapter()
+        Me.lblConfiguratiePadInfo = New System.Windows.Forms.Label()
+        Me.lblDocmanVersieInfo = New System.Windows.Forms.Label()
+        Me.lblDocmanVersie = New System.Windows.Forms.Label()
+        Me.lblPatchNotesPad = New System.Windows.Forms.Label()
+        Me.lblPatchNotesInfo = New System.Windows.Forms.Label()
         Me.TabControl.SuspendLayout()
         Me.TabPageNieuw.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -669,6 +677,10 @@ Public Class Main
         '
         'TabPageConfiguratie
         '
+        Me.TabPageConfiguratie.Controls.Add(Me.lblPatchNotesPad)
+        Me.TabPageConfiguratie.Controls.Add(Me.lblPatchNotesInfo)
+        Me.TabPageConfiguratie.Controls.Add(Me.lblDocmanVersie)
+        Me.TabPageConfiguratie.Controls.Add(Me.lblDocmanVersieInfo)
         Me.TabPageConfiguratie.Controls.Add(Me.lblConfiguratiePad)
         Me.TabPageConfiguratie.Controls.Add(Me.lblConfiguratiePadInfo)
         Me.TabPageConfiguratie.Controls.Add(Me.BestemmelingButton)
@@ -686,20 +698,11 @@ Public Class Main
         'lblConfiguratiePad
         '
         Me.lblConfiguratiePad.AutoSize = True
-        Me.lblConfiguratiePad.Location = New System.Drawing.Point(101, 213)
+        Me.lblConfiguratiePad.Location = New System.Drawing.Point(102, 226)
         Me.lblConfiguratiePad.Name = "lblConfiguratiePad"
         Me.lblConfiguratiePad.Size = New System.Drawing.Size(36, 13)
         Me.lblConfiguratiePad.TabIndex = 7
         Me.lblConfiguratiePad.Text = "CPAD"
-        '
-        'lblConfiguratiePadInfo
-        '
-        Me.lblConfiguratiePadInfo.AutoSize = True
-        Me.lblConfiguratiePadInfo.Location = New System.Drawing.Point(101, 190)
-        Me.lblConfiguratiePadInfo.Name = "lblConfiguratiePadInfo"
-        Me.lblConfiguratiePadInfo.Size = New System.Drawing.Size(85, 13)
-        Me.lblConfiguratiePadInfo.TabIndex = 6
-        Me.lblConfiguratiePadInfo.Text = "Configuratie Pad"
         '
         'BestemmelingButton
         '
@@ -712,7 +715,7 @@ Public Class Main
         '
         'CodesButton
         '
-        Me.CodesButton.Location = New System.Drawing.Point(104, 152)
+        Me.CodesButton.Location = New System.Drawing.Point(101, 152)
         Me.CodesButton.Name = "CodesButton"
         Me.CodesButton.Size = New System.Drawing.Size(143, 23)
         Me.CodesButton.TabIndex = 4
@@ -793,12 +796,62 @@ Public Class Main
         '
         Me.tbaDocumenten.ClearBeforeFill = True
         '
+        'lblConfiguratiePadInfo
+        '
+        Me.lblConfiguratiePadInfo.AutoSize = True
+        Me.lblConfiguratiePadInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConfiguratiePadInfo.Location = New System.Drawing.Point(101, 201)
+        Me.lblConfiguratiePadInfo.Name = "lblConfiguratiePadInfo"
+        Me.lblConfiguratiePadInfo.Size = New System.Drawing.Size(127, 20)
+        Me.lblConfiguratiePadInfo.TabIndex = 6
+        Me.lblConfiguratiePadInfo.Text = "Configuratie Pad"
+        '
+        'lblDocmanVersieInfo
+        '
+        Me.lblDocmanVersieInfo.AutoSize = True
+        Me.lblDocmanVersieInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDocmanVersieInfo.Location = New System.Drawing.Point(101, 249)
+        Me.lblDocmanVersieInfo.Name = "lblDocmanVersieInfo"
+        Me.lblDocmanVersieInfo.Size = New System.Drawing.Size(118, 20)
+        Me.lblDocmanVersieInfo.TabIndex = 8
+        Me.lblDocmanVersieInfo.Text = "Docman Versie"
+        '
+        'lblDocmanVersie
+        '
+        Me.lblDocmanVersie.AutoSize = True
+        Me.lblDocmanVersie.Location = New System.Drawing.Point(102, 274)
+        Me.lblDocmanVersie.Name = "lblDocmanVersie"
+        Me.lblDocmanVersie.Size = New System.Drawing.Size(81, 13)
+        Me.lblDocmanVersie.TabIndex = 9
+        Me.lblDocmanVersie.Text = "DMAN VERSIE"
+        '
+        'lblPatchNotesPad
+        '
+        Me.lblPatchNotesPad.AutoSize = True
+        Me.lblPatchNotesPad.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblPatchNotesPad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPatchNotesPad.Location = New System.Drawing.Point(102, 322)
+        Me.lblPatchNotesPad.Name = "lblPatchNotesPad"
+        Me.lblPatchNotesPad.Size = New System.Drawing.Size(76, 13)
+        Me.lblPatchNotesPad.TabIndex = 11
+        Me.lblPatchNotesPad.Text = "PNOTES PAD"
+        '
+        'lblPatchNotesInfo
+        '
+        Me.lblPatchNotesInfo.AutoSize = True
+        Me.lblPatchNotesInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPatchNotesInfo.Location = New System.Drawing.Point(101, 297)
+        Me.lblPatchNotesInfo.Name = "lblPatchNotesInfo"
+        Me.lblPatchNotesInfo.Size = New System.Drawing.Size(96, 20)
+        Me.lblPatchNotesInfo.TabIndex = 10
+        Me.lblPatchNotesInfo.Text = "Patch Notes"
+        '
         'Main
         '
         Me.ClientSize = New System.Drawing.Size(971, 488)
         Me.Controls.Add(Me.TabControl)
         Me.Name = "Main"
-        Me.Text = "Documentmanager versie 08-04-2016"
+        Me.Text = "Document Manager versie 08-04-2016"
         Me.TabControl.ResumeLayout(False)
         Me.TabPageNieuw.ResumeLayout(False)
         Me.TabPageNieuw.PerformLayout()
@@ -839,23 +892,32 @@ Public Class Main
 
         DateDoc.Value = Today
         AdresLabel.Text = ""
-        lblConfiguratiePad.Text = _Singleton.ConfiguratiePad
 
-        If File.Exists(_Singleton.ConfiguratiePad) Then
-            If InlezenOpgeslagenAuteurMatch() Then
-                InlezenOpgeslagenAfzender()
-            Else
-                'Gebruiker is nog niet geauthenticeerd, verberg knoppen tot hij 'ingelogd' is
-                Dim Toon As Boolean = False
-                VeranderZichtbaarheidGebruikersKnoppen(Toon)
-                Me.Show()
-                MessageBox.Show("U start de applicatie voor de eerste keer op. " & vbCrLf & _
-                                "1: Selecteer uw naam bij Auteur" & vbCrLf &
-                                "2: Selecteer een Afzender" & vbCr &
-                                "Klik daarna op 'Standaard Opslaan'", _
-                                "Welkom", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Dim instellingenPad As String = ApplicatieInstellingen.ConfiguratieInstellingenPad
+        lblConfiguratiePad.Text = instellingenPad
+        lblDocmanVersie.Text = ApplicatieInstellingen.DocmanVersie
+        lblPatchNotesPad.Text = ApplicatieInstellingen.DocmanPatchNotesPad
+
+        Dim ConfigOK As Boolean = False
+        If File.Exists(ApplicatieInstellingen.ConfiguratieInstellingenPad) Then
+            If InlezenOpgeslagenAuteurMatch(instellingenPad) Then
+                InlezenOpgeslagenAfzender(instellingenPad)
+                ConfigOK = True
             End If
         End If
+
+        Me.Show()
+        If Not ConfigOK Then
+            'Gebruiker is nog niet geauthenticeerd, verberg knoppen tot hij 'ingelogd' is
+            Dim Toon As Boolean = False
+            VeranderZichtbaarheidGebruikersKnoppen(Toon)
+            MessageBox.Show("U start de applicatie voor de eerste keer op. " & vbCrLf & _
+                            "1: Selecteer uw naam bij Auteur" & vbCrLf &
+                            "2: Selecteer een Afzender" & vbCr &
+                            "Klik daarna op 'Standaard Opslaan'", _
+                            "Welkom", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+
     End Sub
 
     ''' <summary>
@@ -863,10 +925,10 @@ Public Class Main
     ''' als hij een gelijke (match) vindt geeft hij True terug,
     ''' als hij geen match heeft, moet de gebruiker zelf zeggen wie ze zijn.
     ''' </summary>
-    Private Function InlezenOpgeslagenAuteurMatch() As Boolean
-        If File.Exists(_Singleton.ConfiguratiePad) Then
+    Private Function InlezenOpgeslagenAuteurMatch(ByVal Pad As String) As Boolean
+        If File.Exists(Pad) Then
             Try
-                Dim reader As StreamReader = System.IO.File.OpenText(_Singleton.ConfiguratiePad)
+                Dim reader As StreamReader = System.IO.File.OpenText(Pad)
                 'Inlezen Auteur
                 Dim OpgeslagenAuteur As String = reader.ReadLine()
                 Dim i As Integer
@@ -891,10 +953,10 @@ Public Class Main
         End If
     End Function
 
-    Private Sub InlezenOpgeslagenAfzender()
-        If File.Exists(_Singleton.ConfiguratiePad) Then
+    Private Sub InlezenOpgeslagenAfzender(ByVal Pad As String)
+        If File.Exists(Pad) Then
             Try
-                Dim reader As StreamReader = System.IO.File.OpenText(_Singleton.ConfiguratiePad)
+                Dim reader As StreamReader = System.IO.File.OpenText(Pad)
                 '1ste lijn is de Auteur, skip deze lijn
                 reader.ReadLine()
                 'Inlezen Afzender
@@ -935,7 +997,7 @@ Public Class Main
 
         'Documentnaam + Opslagplaats opbouwen
         Dim strBestandsnaam As String = WordDocumentUtil.GetDocumentNaam(mtgccboSjabloon.SelectedItem.col2, _
-                    DateDoc.Value, lngVolgnr, _Singleton.Auteur.AuteurKort, TxtTitel.Text, ".docx")
+                    DateDoc.Value, lngVolgnr, _Singleton.UIGebruikersInstellingen.Auteur.AuteurKort, TxtTitel.Text, ".docx")
 
         Dim strOpslagPadEnBestandsnaam As String
         If txtOpslagPad.Text.EndsWith("\") Then
@@ -951,7 +1013,7 @@ Public Class Main
         End If
 
         'Wegschrijven in de tabel SAV_Documenten
-        tbaDocumenten.Insert(_Singleton.Auteur.AuteurKort, StrSjabloonCode, lngVolgnr, txtOpslagPad.Text, txtSjabloonPad.Text, Today, DateDoc.Value, TxtTitel.Text, TxtTrefwoord.Text, mtgccboAfzender.SelectedItem.Text, strOpslagPadEnBestandsnaam, StrFirma)
+        tbaDocumenten.Insert(_Singleton.UIGebruikersInstellingen.Auteur.AuteurKort, StrSjabloonCode, lngVolgnr, txtOpslagPad.Text, txtSjabloonPad.Text, Today, DateDoc.Value, TxtTitel.Text, TxtTrefwoord.Text, mtgccboAfzender.SelectedItem.Text, strOpslagPadEnBestandsnaam, StrFirma)
 
         'Word Document aanmaken
         Dim wordApp As New Microsoft.Office.Interop.Word.Application()
@@ -1053,7 +1115,7 @@ Public Class Main
     End Sub
 
     Private Sub TryOpenAdminForm(ByRef admForm As Form, ByVal NewForm As Form)
-        If _Singleton.IsGebruikerAdmin Then
+        If _Singleton.UIGebruikersInstellingen.IsGebruikerAdmin Then
             ToonForm(admForm, NewForm)
         Else 'Gebruiker (nog) geen admin, vraag paswoord
             If PasswordBox.ShowDialog() = Windows.Forms.DialogResult.OK Then
@@ -1145,7 +1207,7 @@ Public Class Main
             'Database error > Gaf 'NULL' terug ipv True / False
         End Try
 
-        _Singleton.Auteur = New Auteur(AuteurLang, AuteurKort, MagAllesZien)
+        _Singleton.UIGebruikersInstellingen.Auteur = New Auteur(AuteurLang, AuteurKort, MagAllesZien)
 
     End Sub
 
@@ -1171,7 +1233,7 @@ Public Class Main
     Private Sub Voorkeur_opslaanButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVoorkeurOpslaan.Click
         Try
             'Wegschrijven 
-            Dim sw As StreamWriter = New System.IO.StreamWriter(_Singleton.ConfiguratiePad, False)
+            Dim sw As StreamWriter = New System.IO.StreamWriter(ApplicatieInstellingen.ConfiguratieInstellingenPad, False)
             Dim SelectedAuteur As String = mtgccboAuteurs.SelectedItem.Text
             sw.WriteLine(SelectedAuteur) 'Opslaan Auteur
             Dim SelectedAfzender As String = mtgccboAfzender.SelectedItem.Text
@@ -1294,7 +1356,7 @@ Public Class Main
         'Documentnaam + Opslagplaats opbouwen
         'Controleren of er geen illegale tekens in zitten
         Dim strBestandsnaamTest As String = WordDocumentUtil.GetDocumentNaam(mtgccboSjabloon.SelectedItem.col2, _
-                    DateDoc.Value, lngVolgnr, _Singleton.Auteur.AuteurKort, TxtTitel.Text, "")
+                    DateDoc.Value, lngVolgnr, _Singleton.UIGebruikersInstellingen.Auteur.AuteurKort, TxtTitel.Text, "")
 
         'Controleren of naam legaal is
         If Not PathUtil.IsValidFileName(strBestandsnaamTest) Then
@@ -1309,13 +1371,13 @@ Public Class Main
                 Dim strTeImporterenBestandsNaamEnPad As String = fldBestand.FileName
                 Dim strExtension As String = Path.GetExtension(strTeImporterenBestandsNaamEnPad)
                 Dim strBestandsnaam As String = WordDocumentUtil.GetDocumentNaam(mtgccboSjabloon.SelectedItem.col2, _
-                    DateDoc.Value, lngVolgnr, _Singleton.Auteur.AuteurKort, TxtTitel.Text, strExtension)
+                    DateDoc.Value, lngVolgnr, _Singleton.UIGebruikersInstellingen.Auteur.AuteurKort, TxtTitel.Text, strExtension)
                 Dim strOpslagPadEnBestandsnaam As String = txtOpslagPad.Text & "\" & strBestandsnaam
 
                 File.Copy(strTeImporterenBestandsNaamEnPad, strOpslagPadEnBestandsnaam)
 
                 'Wegschrijven in de tabel SAV_Documenten
-                tbaDocumenten.Insert(_Singleton.Auteur.AuteurKort, StrSjabloonCode, lngVolgnr, txtOpslagPad.Text, txtSjabloonPad.Text, Today, DateDoc.Value, TxtTitel.Text, TxtTrefwoord.Text, mtgccboAfzender.SelectedItem.Text, strOpslagPadEnBestandsnaam, StrFirma)
+                tbaDocumenten.Insert(_Singleton.UIGebruikersInstellingen.Auteur.AuteurKort, StrSjabloonCode, lngVolgnr, txtOpslagPad.Text, txtSjabloonPad.Text, Today, DateDoc.Value, TxtTitel.Text, TxtTrefwoord.Text, mtgccboAfzender.SelectedItem.Text, strOpslagPadEnBestandsnaam, StrFirma)
 
 
                 MsgBox("Het bestand " & Path.GetFileName(strTeImporterenBestandsNaamEnPad) & _
@@ -1355,11 +1417,22 @@ Public Class Main
     End Function
 
     Private Sub lblConfiguratiePad_Click(sender As Object, e As EventArgs) Handles lblConfiguratiePad.Click
-        Process.Start(Path.GetDirectoryName(_Singleton.ConfiguratiePad))
+        Try
+            Process.Start(Path.GetDirectoryName(ApplicatieInstellingen.ConfiguratieInstellingenPad))
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Onverwacht probleem")
+        End Try
     End Sub
 
     Private Sub txtOpslagPad_TextChanged(sender As Object, e As EventArgs) Handles txtOpslagPad.TextChanged
-        _Singleton.Opslagplaats = txtOpslagPad.Text
+        _Singleton.UIGebruikersInstellingen.Opslagplaats = txtOpslagPad.Text
     End Sub
 
+    Private Sub lblPatchNotesPad_Click(sender As Object, e As EventArgs) Handles lblPatchNotesPad.Click
+        Try
+            Process.Start(ApplicatieInstellingen.DocmanPatchNotesPad)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Onverwacht probleem")
+        End Try
+    End Sub
 End Class

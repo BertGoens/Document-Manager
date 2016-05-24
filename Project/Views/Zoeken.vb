@@ -20,8 +20,8 @@ Public Class Zoeken
         Me.DatumVanDTP.Value = DateAdd(DateInterval.Month, -4, Today)
         Me.DatumTotDTP.Value = Today
         cboDocumentTypeCode.Text = "ALLES"
-        cboAuteurs.Text = _Singleton.Auteur.AuteurLang
-        cboAuteurs.Enabled = _Singleton.Auteur.MagAllesZien
+        cboAuteurs.Text = _Singleton.UIGebruikersInstellingen.Auteur.AuteurLang
+        cboAuteurs.Enabled = _Singleton.UIGebruikersInstellingen.Auteur.MagAllesZien
         btnZoek.Visible = True
     End Sub
 
@@ -142,11 +142,11 @@ Public Class Zoeken
             'Vraag gebruiker een nieuwe locatie om bestand naar te verplaatsen
             Dim dlgFolderLocatie As SaveFileDialog = New SaveFileDialog
             dlgFolderLocatie.FileName = VerplaatsFileName
-            If String.IsNullOrEmpty(_Singleton.Opslagplaats) Then
+            If String.IsNullOrEmpty(_Singleton.UIGebruikersInstellingen.Opslagplaats) Then
                 dlgFolderLocatie.InitialDirectory = TeVerplaatsenFilePathAndName
                 dlgFolderLocatie.RestoreDirectory = True
             Else
-                dlgFolderLocatie.InitialDirectory = _Singleton.Opslagplaats
+                dlgFolderLocatie.InitialDirectory = _Singleton.UIGebruikersInstellingen.Opslagplaats
             End If
 
             dlgFolderLocatie.AddExtension = False

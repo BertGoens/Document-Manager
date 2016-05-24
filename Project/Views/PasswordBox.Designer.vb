@@ -97,7 +97,7 @@ Partial Class PasswordBox
         Me.Name = "PasswordBox"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "PasswordBox"
+        Me.Text = "Wachtwoord"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
